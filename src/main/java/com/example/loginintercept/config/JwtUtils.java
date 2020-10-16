@@ -30,7 +30,7 @@ public class JwtUtils {
    * @return
    */
   public String generateToken(String userId) {
-    Date now = new Date();
+    Date now = new Date();// dev_a 修改个乱七八糟
     Date expireDate = new Date(now.getTime() + expire);
     return Jwts.builder().setHeaderParam("type", "JWT").setSubject(userId).setIssuedAt(now)
         .setExpiration(expireDate).signWith(
